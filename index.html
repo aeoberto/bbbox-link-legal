@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BBBox Link – Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0A0A0A;
+      color: #EAEAEA;
+      max-width: 800px;
+      margin: auto;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #DEA76C;
+    }
+    a {
+      color: #3B9EFF;
+      text-decoration: none;
+    }
+    code {
+      background: #141414;
+      border: 1px solid #2A2520;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      color: #DEA76C;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #9A9A9A;
+      border-top: 1px solid #2A2520;
+      padding-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Privacy Policy – BBBox Link</h1>
+
+<p><strong>Effective Date:</strong> 2026</p>
+
+<p>
+BBBox Link is a technician tool for the BarBoards Box (BB-SSB) hardware platform.
+It is used for manufacturing, QA/QC, troubleshooting, and field service by
+authorized BarBoards and IO-TEQ personnel. This policy describes what data the
+app accesses, how it is used, and your choices.
+</p>
+
+<p>
+<strong>Summary:</strong> BBBox Link does not collect personal data, does not
+use analytics or tracking, does not require an account, and does not send any
+information to our servers or any third party. All communication happens
+locally over Bluetooth Low Energy (BLE) between the iOS device and a nearby
+BarBoards Box.
+</p>
+
+<h2>Information We Access</h2>
+
+<h3>Bluetooth (Required)</h3>
+<p>
+BBBox Link uses your device's Bluetooth radio to discover and connect to
+BarBoards Box hardware. The app exchanges device identifiers (e.g.
+<code>BB_&lt;uid&gt;</code>), status telemetry, configuration, and diagnostic
+commands with the connected BarBoards Box. This data stays between your iOS
+device and the BarBoards Box. None of it is transmitted to BarBoards, IO-TEQ,
+or any third-party server by the app.
+</p>
+
+<h3>On-Device Storage</h3>
+<p>
+BBBox Link stores the following locally on your iOS device:
+</p>
+<ul>
+  <li><strong>App preferences</strong> – Last connected device UID, UI settings, and similar non-sensitive state.</li>
+  <li><strong>Operator session token</strong> – A short-lived BLE session token used to authenticate operator commands with a paired BarBoards Box. This token is stored in the iOS Keychain on your device and is not transmitted off-device.</li>
+</ul>
+
+<h2>What We Do Not Do</h2>
+<ul>
+  <li>We do not collect, transmit, or store your personal data on any server.</li>
+  <li>We do not require an email, phone number, account, or login.</li>
+  <li>We do not use third-party analytics, advertising, crash reporting, or tracking SDKs.</li>
+  <li>We do not access your contacts, photos, microphone, camera, or location.</li>
+  <li>We do not sell, share, or monetize any data.</li>
+</ul>
+
+<h2>Third-Party Services</h2>
+<p>
+BBBox Link does not integrate with any third-party services. The app communicates
+only with BarBoards Box hardware over BLE.
+</p>
+
+<h2>Your Choices</h2>
+<ul>
+  <li><strong>Bluetooth permission</strong> – You can revoke Bluetooth permission at any time in <em>iOS Settings → Privacy &amp; Security → Bluetooth → BBBox Link</em>. Without Bluetooth, the app cannot connect to a BarBoards Box.</li>
+  <li><strong>Clear local data</strong> – Deleting the app from your device removes all locally stored preferences and Keychain tokens associated with BBBox Link.</li>
+</ul>
+
+<h2>Data Retention</h2>
+<p>
+Because BBBox Link does not transmit data off your device, there is no
+server-side retention. Locally stored preferences and Keychain tokens remain
+on your device until you clear them or delete the app.
+</p>
+
+<h2>Security</h2>
+<p>
+Communication between the app and the BarBoards Box uses Bluetooth Low Energy.
+Operator-level commands require an authenticated BLE session bound to a token
+provisioned to the BarBoards Box and stored in the iOS Keychain on your device.
+</p>
+
+<h2>Children's Privacy</h2>
+<p>
+BBBox Link is a professional technician tool and is not directed to children.
+The app does not knowingly collect any information from children under 13.
+</p>
+
+<h2>Changes to This Policy</h2>
+<p>
+If this policy changes, the updated version will be published at this URL with
+a new effective date.
+</p>
+
+<h2>Contact</h2>
+<p>
+If you have any questions about this policy, contact:<br>
+<strong>support@io-teq.com</strong>
+</p>
+
+<footer>
+  © 2026 IO-TEQ · BarBoards Box and BBBox Link are products of BarBoards, engineered by IO-TEQ.
+</footer>
+
+</body>
+</html>
