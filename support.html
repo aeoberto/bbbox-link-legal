@@ -14,12 +14,20 @@
       padding: 40px;
       line-height: 1.6;
     }
-    h1, h2 {
+    h1, h2, h3 {
       color: #DEA76C;
     }
     a {
       color: #3B9EFF;
       text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    nav {
+      margin-bottom: 32px;
+      font-size: 0.95em;
+      color: #9A9A9A;
     }
     code {
       background: #141414;
@@ -41,53 +49,133 @@
 </head>
 <body>
 
+<nav>
+  <a href="index.html">Privacy Policy</a> ·
+  <a href="support.html">Support</a> ·
+  <a href="https://www.barboards.tv/">barboards.tv</a>
+</nav>
+
 <h1>BBBox Link – Support</h1>
 
-<p>Thank you for using <strong>BBBox Link</strong>, the official BarBoards Box technician tool for manufacturing, QA/QC, troubleshooting, and field service.</p>
+<p>
+Thank you for using <strong>BBBox Link</strong>, the official BarBoards Box
+technician tool for manufacturing, QA/QC, troubleshooting, and field service.
+</p>
 
 <h2>Getting Help</h2>
 <p>
-If you experience any issues, have questions, or need assistance, please contact:
+If you experience issues, have questions, or need assistance, contact:
 </p>
-
 <p>
 <strong>Email:</strong> <a href="mailto:support@io-teq.com">support@io-teq.com</a>
 </p>
-
 <p>
-Please include your app version (Settings → About), the BarBoards Box UID
-(e.g. <code>BB_e072a1aeb804</code>), and a short description of the issue.
+When reporting a problem, please include:
 </p>
-
-<h2>Common Topics</h2>
 <ul>
-  <li>Discovering and connecting to a BarBoards Box over Bluetooth</li>
-  <li>Operator unlock and session authentication</li>
-  <li>Reading supervisor, SoM, switcher, fan, and power status</li>
-  <li>Running hardware tests (relay exercise, fan sweep)</li>
-  <li>Operator actions (route changes, fan control, power cycle)</li>
-  <li>Firmware compatibility and protocol versions</li>
+  <li>
+    <strong>App version and build</strong> – Scanner toolbar ⚙️
+    <em>App Settings → About BBBox Link</em>, or toolbar ℹ️ <em>About</em>
+  </li>
+  <li>
+    <strong>BarBoards Box UID</strong> – Shown as <code>BB_&lt;uid&gt;</code>
+    (for example <code>BB_e072a1aeb804</code>)
+  </li>
+  <li>
+    <strong>Firmware and protocol</strong> – Visible in About when a device is
+    connected
+  </li>
+  <li>
+    A short description of the issue and steps to reproduce
+  </li>
+  <li>
+    Optional: a support export from the Overview tab
+    (<em>Export support report</em>)
+  </li>
 </ul>
 
 <h2>Requirements</h2>
 <ul>
-  <li>iPhone or iPad running iOS 16 or later</li>
+  <li>iPhone or iPad running <strong>iOS 16</strong> or later</li>
   <li>Bluetooth enabled on the iOS device</li>
   <li>A powered BarBoards Box within Bluetooth range</li>
+  <li>
+    A <strong>mobile operator token</strong> provisioned for the box (required
+    for operator unlock and technician actions)
+  </li>
 </ul>
 
-<h2>Bluetooth Permission</h2>
+<h2>Quick Start</h2>
+<ol>
+  <li>Enable Bluetooth on your iOS device.</li>
+  <li>Open BBBox Link and complete onboarding if prompted.</li>
+  <li>On the Scanner screen, wait for your box to appear as <code>BB_&lt;uid&gt;</code>.</li>
+  <li>Tap the device row to connect.</li>
+  <li>Enter the mobile operator token when the unlock gate appears.</li>
+  <li>Use Overview, SoMs, Switcher, Tests, and Device Settings as needed.</li>
+</ol>
+
+<h2>Common Topics</h2>
+<ul>
+  <li>Discovering and connecting to a BarBoards Box over Bluetooth</li>
+  <li>Operator unlock, session expiry, and mobile operator tokens</li>
+  <li>Reading supervisor, SoM, switcher, fan, and power status</li>
+  <li>3D box model viewer and live telemetry overlays</li>
+  <li>Running hardware tests (relay exercise, fan sweep)</li>
+  <li>Operator actions (route changes, fan control, power cycle)</li>
+  <li>Rotating a mobile operator token (Device Settings → Security)</li>
+  <li>Firmware compatibility and protocol versions</li>
+  <li>Exporting a support report from Overview (<em>Export support report</em>)</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+
+<h3>Bluetooth is off or permission denied</h3>
 <p>
-BBBox Link requires Bluetooth permission to discover and connect to BarBoards
-Box hardware. If the app cannot find a device, verify Bluetooth is enabled and
-that BBBox Link has Bluetooth access in <em>iOS Settings → Privacy &amp; Security
-→ Bluetooth</em>.
+Ensure Bluetooth is on in Control Center or Settings. Grant BBBox Link access in
+<em>iOS Settings → Privacy &amp; Security → Bluetooth → BBBox Link</em>.
+</p>
+
+<h3>No boxes appear in Scanner</h3>
+<ul>
+  <li>Confirm the BarBoards Box is powered and advertising as <code>BB_&lt;uid&gt;</code>.</li>
+  <li>Move closer to the box and tap <em>Rescan</em>.</li>
+  <li>Verify no other app is holding an exclusive connection to the box.</li>
+</ul>
+
+<h3>Unlock fails</h3>
+<ul>
+  <li>Confirm you are using the correct <strong>mobile operator token</strong> for that box UID.</li>
+  <li>Operator tokens are separate from Jetson or venue credentials.</li>
+  <li>After a successful unlock, tokens can be stored in Keychain for reuse on this device.</li>
+</ul>
+
+<h3>Connection lost or session expired</h3>
+<p>
+Return to the device session and use <em>Reconnect</em>, or unlock again if
+the operator session expired. Enable <em>Auto-reconnect last device</em> in
+App Settings if you want Scanner to reconnect automatically on your next visit.
+</p>
+
+<h3>Clear saved credentials</h3>
+<p>
+<em>App Settings → Security → Clear all saved operator tokens</em> removes all
+mobile operator tokens from Keychain on this device. Connected sessions are
+not locked automatically.
+</p>
+
+<h2>Privacy</h2>
+<p>
+BBBox Link does not send your data to IO-TEQ or BarBoards servers. See the
+<a href="index.html">Privacy Policy</a> for details on Bluetooth access,
+on-device storage, and optional support exports.
 </p>
 
 <h2>Device Support</h2>
 <p>
-BBBox Link works with supported BarBoards Box hardware. Ensure the unit is
-powered, within Bluetooth range, and running compatible firmware.
+BBBox Link works with supported BarBoards Box hardware running compatible
+firmware. Ensure the unit is powered, within Bluetooth range, and provisioned
+with a valid mobile operator token for technician access.
 </p>
 
 <footer>
